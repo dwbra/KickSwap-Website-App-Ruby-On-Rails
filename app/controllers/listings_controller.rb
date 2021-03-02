@@ -38,6 +38,11 @@ class ListingsController < ApplicationController
 
   # PATCH/PUT /listings/1 or /listings/1.json
   def update
+    @listing = Listing.find(params[:id])
+    if current_user.id == @listing.user_id
+      @listing.update(listing_params)
+    end
+
     respond_to do |format|
       if @listing.update(listing_params)
         format.html { redirect_to @listing, notice: "Listing was successfully updated." }
