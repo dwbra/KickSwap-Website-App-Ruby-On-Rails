@@ -18,7 +18,7 @@
 <p>
   <strong>Images:</strong>
   <% if @listing.images.attached? %>
-  <div style=" width:300px; height:300px;">
+  <div style="width:300px; height:300px;">
   <% @listing.images.each do |image| %>
     <%= image_tag(image) %>
   <% end %>

@@ -10,8 +10,10 @@
   </head>
 
   <body>
-    <p class="alert"><%= alert %></p>
     <%= render "partials/navbar"%>
+    <main>
+    <p class="alert"><%= alert %></p>
     <%= yield %>
+    </main>
   </body>
 </html>
