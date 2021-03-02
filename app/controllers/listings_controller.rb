@@ -51,7 +51,10 @@ class ListingsController < ApplicationController
 
   # DELETE /listings/1 or /listings/1.json
   def destroy
-    @listing.destroy
+    @listing = Listing.find(params[:id])
+    if current_user.id == @listing.user_id
+      @listing.destroy
+    end
     respond_to do |format|
       format.html { redirect_to listings_url, notice: "Listing was successfully destroyed." }
       format.json { head :no_content }

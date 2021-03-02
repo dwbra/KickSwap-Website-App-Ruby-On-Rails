@@ -1,2 +1,23 @@
-<h1>Home#page</h1>
-<p>Find me in app/views/home/page.html.erb</p>
+<div class="container">
+    <h1>Shop Shoes Today!</h1>
+        <div class="card-deck">
+        <% @listings.each do |listing| %>
+        <div class="card mb-4 shadow-sm">
+        <div class="card-header">
+        <%= listing.images %>
+        <%# if @listings.images.attached? %>
+        <%# @listings.images.each do |image| %>
+        <%#= image_tag(image) %>
+        <%# end %>
+        <%# end %>
+        </div>
+        
+          <div class="card-body">
+            <h5 class="card-title"><%= listing.name %></h5>
+            <h6 class="card-subtitle mb-2 text muted"> $ <%= listing.price %></h6>
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Buy Now</button>
+          </div>
+        </div>
+        <% end %>
+</div>
+</div>
