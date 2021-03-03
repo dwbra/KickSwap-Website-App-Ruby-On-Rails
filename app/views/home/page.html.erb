@@ -8,7 +8,8 @@
             <div class="card-body">
                 <h5 class="card-title"><%= listing.name %></h5>
                 <h6 class="card-subtitle mb-2 text muted"> $ <%= listing.price %></h6>
-                <button type="button" class="btn btn-lg btn-block btn-outline-primary" <%=link_to "Buy Now", listing_path %> </button>
+                <%= link_to "Buy Now!", listing_path(id: listing.id), method: :get, class: "btn btn-lg btn-block btn-outline-primary"%>
+                <%#= <button type="button  link_to "Buy Now!", listing.id, method: :get, class="btn btn-lg btn-block btn-outline-primary"</button>%> 
             </div>
             <% end %>
         </div>
