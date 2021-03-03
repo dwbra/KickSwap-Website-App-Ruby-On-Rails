@@ -28,12 +28,10 @@ main {
      margin-left: 150%;
 }
 
-// .card-header {
-//      img {
-//         max-width: 300px !important;
-//         max-height: 300px !important;
-//      }
-// }
+.card-header {
+        max-width: 300px !important;
+        max-height: 300px !important;
+     }
 
 // #homepage-img {
 //      img {
@@ -44,7 +42,7 @@ main {
 
 .listings-flex {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-between;
     img {
