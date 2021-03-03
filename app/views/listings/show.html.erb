@@ -18,17 +18,12 @@
 <p>
   <strong>Images:</strong>
   <% if @listing.images.attached? %>
-  <div style="width:300px; height:300px;">
+  <div class="show-img">
   <% @listing.images.each do |image| %>
     <%= image_tag(image) %>
   <% end %>
   </div>
 <% end %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @listing.user_id %>
 </p>
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
