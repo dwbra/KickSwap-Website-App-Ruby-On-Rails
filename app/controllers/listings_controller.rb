@@ -9,6 +9,15 @@ class ListingsController < ApplicationController
   # GET /listings/1 or /listings/1.json
   def show
     @listing = Listing.find(params[:id])
+
+    session = Stripe::Checkout::Session.create (
+      payment_method_types: ["card"],
+      customer_email: "dworkmang@gmail.com"
+      line_items: [{
+        name: @listing.name,
+        description: @listing.description,
+      }]
+    )
   end
 
   # GET /listings/new
