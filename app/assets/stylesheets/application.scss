@@ -28,25 +28,14 @@ main {
      margin-left: 150%;
 }
 
-.card-header {
-        max-width: 300px !important;
-        max-height: 300px !important;
-     }
-
-// #homepage-img {
-//      img {
+// .card-header {
 //         max-width: 300px !important;
 //         max-height: 300px !important;
 //      }
-// }
 
 .listings-flex {
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    img {
-        max-width: 300px !important;
-        max-height: 300px !important;
-     }
+    flex-direction: row;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
 }
