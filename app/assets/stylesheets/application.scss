@@ -14,23 +14,41 @@
  *= require_self
  */
 
- @import "bootstrap";
+@import "bootstrap";
 
- main {
+main {
      margin: 0 10% 0 10%;
- }
+}
 
- #navbar {
+#navbar {
      padding-left: 10%;
- }
+}
 
- .form-control {
+.form-control {
      margin-left: 150%;
- }
+}
 
- .card-header {
-     img {
+// .card-header {
+//      img {
+//         max-width: 300px !important;
+//         max-height: 300px !important;
+//      }
+// }
+
+// #homepage-img {
+//      img {
+//         max-width: 300px !important;
+//         max-height: 300px !important;
+//      }
+// }
+
+.listings-flex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    img {
         max-width: 300px !important;
         max-height: 300px !important;
      }
- }
+}

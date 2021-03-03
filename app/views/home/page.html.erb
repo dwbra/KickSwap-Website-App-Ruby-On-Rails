@@ -1,18 +1,15 @@
-<div class="container">
+<div class="listings-flex">
     <h1>Shop Shoes Today!</h1>
-      <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-        <div class="col">
-        <div class="card mb-4 shadow-sm">
-        <% @listings.each do |listing| %>
-        <div class="card-header">
-        <%= image_tag(listing.images[0]) if listing.images.attached? %>
+        <div>
+            <% @listings.each do |listing| %>
+            <div class="card-header">
+                <%= image_tag(listing.images[0]) if listing.images.attached? %>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title"><%= listing.name %></h5>
+                <h6 class="card-subtitle mb-2 text muted"> $ <%= listing.price %></h6>
+                <button type="button" class="btn btn-lg btn-block btn-outline-primary">Buy Now</button>
+            </div>
+            <% end %>
         </div>
-          <div class="card-body">
-            <h5 class="card-title"><%= listing.name %></h5>
-            <h6 class="card-subtitle mb-2 text muted"> $ <%= listing.price %></h6>
-            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Buy Now</button>
-          </div>
-        </div>
-        <% end %>
-</div>
-</div>
+<div>
