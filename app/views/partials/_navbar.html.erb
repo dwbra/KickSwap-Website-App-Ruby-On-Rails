@@ -16,32 +16,16 @@
             <%= link_to "Sell Kicks", new_listing_path, method: :get, class: "nav-link"%>
             <% end %>
           </li>
-          <li class="nav-item">
-            <a class="nav-link disabled" href="#">Disabled</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-            <div class="dropdown-menu" aria-labelledby="dropdown05">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-            </div>
-          </li>
           <li class="nav-item active">
             <% if !user_signed_in? %>
             <%= link_to "Log In", new_user_session_path, method: :get, class: "nav-link"%>
             <% else %>
             <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "nav-link"%>
             <% end %>
-        <%# </li>
-          <li class="nav-item active">
-            <% if user_signed_in? %>
-            <%# link_to "Log Out", destroy_session_path, method: :delete, class: "nav-link"%>
-            <%# end %>
           </li>
         </ul>
-        <form class="form-inline my-2 my-md-0">
-          <input class="form-control" type="text" placeholder="Search">
+        <form>
+          <input class="form-control" type="text" placeholder="Search" aria-label="Search">
         </form>
       </div>
     </nav>

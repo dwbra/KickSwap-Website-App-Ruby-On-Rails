@@ -8,6 +8,7 @@ class ListingsController < ApplicationController
 
   # GET /listings/1 or /listings/1.json
   def show
+    @listing = Listing.find(params[:id])
   end
 
   # GET /listings/new
@@ -38,6 +39,11 @@ class ListingsController < ApplicationController
 
   # PATCH/PUT /listings/1 or /listings/1.json
   def update
+    @listing = Listing.find(params[:id])
+    if current_user.id == @listing.user_id
+      @listing.update(listing_params)
+    end
+
     respond_to do |format|
       if @listing.update(listing_params)
         format.html { redirect_to @listing, notice: "Listing was successfully updated." }
@@ -51,7 +57,10 @@ class ListingsController < ApplicationController
 
   # DELETE /listings/1 or /listings/1.json
   def destroy
-    @listing.destroy
+    @listing = Listing.find(params[:id])
+    if current_user.id == @listing.user_id
+      @listing.destroy
+    end
     respond_to do |format|
       format.html { redirect_to listings_url, notice: "Listing was successfully destroyed." }
       format.json { head :no_content }

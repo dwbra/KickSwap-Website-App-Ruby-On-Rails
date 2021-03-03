@@ -14,4 +14,28 @@
  *= require_self
  */
 
- @import "bootstrap";
+@import "bootstrap";
+
+main {
+     margin: 0 10% 0 10%;
+}
+
+#navbar {
+     padding-left: 10%;
+}
+
+.form-control {
+     margin-left: 150%;
+}
+
+// .card-header {
+//         max-width: 300px !important;
+//         max-height: 300px !important;
+//      }
+
+.listings-flex {
+    display: flex;
+    flex-direction: row;
+    // flex-wrap: wrap;
+    // justify-content: space-between;
+}

@@ -1,2 +1,15 @@
-<h1>Home#page</h1>
-<p>Find me in app/views/home/page.html.erb</p>
+<h2>Shop Shoes</h2>
+<div class="row row-cols-1 row-cols-md-3">
+  <% @listings.each do |listing| %>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <%= image_tag(listing.images[0]) if listing.images.attached? %>
+          <div class="card-body">
+            <h5 class="card-title"><%= listing.name %></h5>
+            <p class="card-text"> $ <%= listing.price %></p>
+            <%= link_to "Buy Now!", listing_path(id: listing.id), method: :get, class: "btn btn-lg btn-block btn-outline-primary"%>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>
