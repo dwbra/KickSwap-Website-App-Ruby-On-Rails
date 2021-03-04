@@ -26,5 +26,20 @@
 <% end %>
 </p>
 
+<button id="checkout-button">Checkout</button>
+
+<script>
+  document.getElementById('checkout-button')
+    .addEventListener("click", () => {
+      const stripe = Stripe(
+        "<%= Rails.application.credentials.dig(:stripe, :public_key) %>"
+      )
+
+      stripe.redirectToCheckout({
+        sessionId: "<%= @session_id %>"
+      })
+    })
+</script>
+
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>
