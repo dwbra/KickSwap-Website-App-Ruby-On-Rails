@@ -5,6 +5,7 @@ class PaymentsController < ApplicationController
     end
   
     def webhook
+      puts "received webhoook from Stripe"
       payment_id = params[:data][:object][:payment_intent]
       payment = Stripe::PaymentIntent.retrieve(payment_id)
       listing_id = payment.metadata.listing_id
@@ -16,6 +17,7 @@ class PaymentsController < ApplicationController
   
       listing = Listing.find(listing_id.to_i)
       listing.sold = true
+    #   listing.buyer_id = user_id
       listing.save
   
       status 200
