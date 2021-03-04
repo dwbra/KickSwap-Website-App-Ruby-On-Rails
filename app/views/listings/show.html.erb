@@ -26,5 +26,29 @@
 <% end %>
 </p>
 
+<% if @listing.sold %>
+  <p>Listing already sold!</p>
+<% else %>
+  <% if user_signed_in? %>
+  <button id="checkout-button">Checkout</button>
+  <% else %>
+    <%= button_to "Buy Now!", new_user_registration_path, method: :get %>
+  <% end %>
+<% end %>
+
+
+<script>
+  document.getElementById('checkout-button')
+    .addEventListener("click", () => {
+      const stripe = Stripe(
+        "<%= Rails.application.credentials.dig(:stripe, :public_key) %>"
+      )
+
+      stripe.redirectToCheckout({
+        sessionId: "<%= @session_id %>"
+      })
+    })
+</script>
+
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <%= link_to 'Back', listings_path %>
