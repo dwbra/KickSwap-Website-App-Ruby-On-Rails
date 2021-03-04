@@ -26,7 +26,16 @@
 <% end %>
 </p>
 
-<button id="checkout-button">Checkout</button>
+<% if @listing.sold %>
+  <p>Listing already sold!</p>
+<% else %>
+  <% if user_signed_in? %>
+  <button id="checkout-button">Checkout</button>
+  <% else %>
+    <%= button_to "Buy Now!", new_user_registration_path, method: :get %>
+  <% end %>
+<% end %>
+
 
 <script>
   document.getElementById('checkout-button')
