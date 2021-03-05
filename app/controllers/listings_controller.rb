@@ -50,6 +50,7 @@ class ListingsController < ApplicationController
     @listing = Listing.new(listing_params)
 
     @listing.user_id = current_user.id
+    # @listing.images.attach(params[:listing][:images])
 
     respond_to do |format|
       if @listing.save

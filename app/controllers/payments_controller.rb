@@ -17,7 +17,7 @@ class PaymentsController < ApplicationController
   
       listing = Listing.find(listing_id.to_i)
       listing.sold = true
-    #   listing.buyer_id = user_id
+      listing.buyer_id = user_id
       listing.save
   
       status 200
