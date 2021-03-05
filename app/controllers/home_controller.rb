@@ -4,6 +4,6 @@ class HomeController < ApplicationController
   end
 
   def account
-    @listings = Listing.all
+    @my_purchases = Listing.where(buyer_id: current_user.id)
   end
 end
