@@ -1,0 +1,11 @@
+<h3>
+    My Account Page
+</h3>
+
+<h4>My Purchases</h4>
+
+<% if user_signed_in? %>
+    <% @my_purchases.each do |purchase| %>
+    <%= purchase %>
+    <% end %>
+<% end %>
