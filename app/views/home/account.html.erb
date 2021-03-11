@@ -4,6 +4,8 @@
 
 <h4>My Purchases</h4>
 
-<% @my_purchases.each do |purchase| %>
-<%= puts purchase %>
+<% if user_signed_in? %>
+    <% @my_purchases.each do |purchase| %>
+    <%= purchase %>
+    <% end %>
 <% end %>
