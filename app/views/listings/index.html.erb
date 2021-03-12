@@ -19,7 +19,7 @@
         <td><%= listing.description %></td>
         <td>$<%= listing.price %></td>
         <td><%= link_to 'Show Listing', listing %></td>
-        <% if current_user.id == listing.user_id %>
+        <% if user_signed_in? && current_user.id == listing.user_id %>
         <td><%= link_to 'Edit Listing', edit_listing_path(listing) %></td>
         <td><%= link_to 'Destroy Listing', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% end %>
