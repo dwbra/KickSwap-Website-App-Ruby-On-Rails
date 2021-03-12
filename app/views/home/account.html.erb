@@ -6,6 +6,8 @@
 
 <% if user_signed_in? %>
     <% @my_purchases.each do |purchase| %>
-    <%= purchase %>
+    <%= purchase.name %>
+    <%= purchase.id %>
+    <%= purchase.price %>
     <% end %>
 <% end %>

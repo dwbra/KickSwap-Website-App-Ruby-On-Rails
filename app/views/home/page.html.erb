@@ -1,6 +1,8 @@
 <h2>Shop Shoes</h2>
 <div class="row row-cols-1 row-cols-md-3">
+<% c = 0 %>
   <% @listings.each do |listing| %>
+    <% c += 1 %>
       <div class="col-md-4">
         <div class="card h-100">
           <%= image_tag(listing.images[0]) if listing.images.attached? %>
@@ -8,6 +10,9 @@
             <h5 class="card-title"><%= listing.name %></h5>
             <p class="card-text"> $ <%= listing.price %></p>
             <%= link_to "Buy Now!", listing_path(id: listing.id), method: :get, class: "btn btn-lg btn-block btn-outline-primary"%>
+            <% if c >= 6 %>
+            <% break %>
+            <% end %>
           </div>
         </div>
       </div>
