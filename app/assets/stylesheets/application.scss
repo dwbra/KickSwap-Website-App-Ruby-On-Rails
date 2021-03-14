@@ -80,8 +80,7 @@ h3, h2 {
 .footer {
      display: flex;
      flex-direction: row;
-     justify-content: space-between;
-     flex-wrap: wrap;
+     justify-content: space-evenly;
      background-color: #e17aef;
      padding-top: 25px;
      padding-bottom: 15px;
@@ -128,6 +127,10 @@ h3, h2 {
 }
 
 .card img {
-     // width: 300px !important;
-     height: 300px !important;
+     width: 100% !important;
+     height: 250px !important;
+}
+
+.footer-w {
+     width: 100% !important;
 }

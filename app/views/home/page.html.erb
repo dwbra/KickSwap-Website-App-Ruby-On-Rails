@@ -11,7 +11,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= listing.name %></h5>
             <p class="card-text"> $ <%= listing.price %></p>
-            <%= link_to "Buy Now!", listing_path(id: listing.id), method: :get, class: "btn btn-lg btn-block btn-outline-primary"%>
+            <%= link_to "Buy Now!", listing_path(id: listing.id), method: :get, class: "slider-btn"%>
             <% if c >= 6 %>
             <% break %>
             <% end %>
