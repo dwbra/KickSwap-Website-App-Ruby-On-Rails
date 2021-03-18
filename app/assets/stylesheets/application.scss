@@ -14,7 +14,11 @@
  *= require_self
  */
 
-@import "bootstrap";
+@import "bootstrap/scss/bootstrap";
+
+// body {
+//      margin: 0;
+// }
 
 main {
      margin: 0 10% 0 10%;
@@ -22,6 +26,19 @@ main {
 
 #navbar {
      padding-left: 10%;
+     padding-top: 10px;
+     padding-bottom: 10px;
+     background-color: #e17aef !important;
+     color: white !important;
+     font-family: 'Poppins', sans-serif;
+     a:hover {
+          color: #ff6100 !important;
+     }
+}
+
+.nav-link {
+     color: white !important;
+     font-family: 'Poppins', sans-serif;
 }
 
 .form-control {
@@ -33,4 +50,127 @@ main {
         max-width: 300px;
         max-height: 300px;
     }
+}
+
+#myCarousel {
+     img {
+          height: 500px !important;
+          width: 1920px !important;
+}
+     margin: 0 0 0 0 !important;
+}
+
+// .carousel-inner {
+//      // overflow: visible !important;
+//      // width: 100% !important;
+//      margin: 0 -10% 0 -10% !important;
+//      padding-left: -10% !important;
+// }
+
+
+p, h1, h2, h3, h4, h5, h6 {
+     font-family: 'Poppins', sans-serif;
+}
+
+h3, h2 {
+     color: #ff6100;
+     text-align: center;
+}
+
+.footer {
+     display: flex;
+     flex-direction: row;
+     justify-content: space-evenly;
+     background-color: #e17aef;
+     padding-top: 25px;
+     padding-bottom: 15px;
+     padding-left: 10%;
+     color: white;
+     margin-top: 50px;
+     a {
+          color: white;
+     }
+}
+
+.footer a:hover {
+     color: #ff6100 !important;
+}
+
+.copyright { 
+     display: flex;
+     flex-direction: row;
+     justify-content: center;
+     background-color: #ff6100;
+     color: white;
+     padding-top: 10px;
+     padding-bottom: 10px;
+}
+
+.carousel-caption {
+     position: absolute;
+     top: 25%;
+}
+
+.slider-btn {
+     background-color: #ff6100;
+     color: white;
+     padding: 10px 20px 10px 20px;
+     text-decoration: none;
+     font-size: 20px;
+     border-radius: 5%;
+}
+
+.slider-btn:hover {
+     border: 1px solid #ff6100;
+     color: #ff6100;
+     background-color: transparent !important;
+}
+
+.card img {
+     width: 100% !important;
+     height: 250px !important;
+}
+
+.footer-w {
+     width: 100% !important;
+}
+
+#listing-form {
+     text-align: center;
+}
+
+#listing-form label  {
+     padding-top: 25px;
+     font-family: 'Poppins', sans-serif;
+     color: #ff6100;
+}
+#listing-form input[type=submit] {
+     background-color: #ff6100;
+     color: white;
+     padding: 10px 20px 10px 20px;
+     text-decoration: none;
+     font-size: 16px;
+     border-radius: 5%;
+     font-family: 'Poppins', sans-serif;
+     border: none;
+}
+
+#listing-form input[type=submit]:hover {
+     border: 1px solid #ff6100;
+     color: #ff6100;
+     background-color: transparent !important;
+}
+
+#listing-form input[type=file] {
+     font-family: 'Poppins', sans-serif;
+     border: none;
+}
+
+
+@media screen and (max-width: 786px) {
+     .footer {
+          display: flex;
+          flex-wrap: wrap !important;
+          width: 100%;
+     }
 }

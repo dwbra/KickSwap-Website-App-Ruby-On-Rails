@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2021_03_05_011055) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  #Activestorage is used to store image uploads in a postgresql database table
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -25,6 +26,7 @@ ActiveRecord::Schema.define(version: 2021_03_05_011055) do
     t.index ["record_type", "record_id", "name", "blob_id"], name: "index_active_storage_attachments_uniqueness", unique: true
   end
 
+  #Active storage once enabled creates a blob for temporary files
   create_table "active_storage_blobs", force: :cascade do |t|
     t.string "key", null: false
     t.string "filename", null: false
@@ -36,6 +38,10 @@ ActiveRecord::Schema.define(version: 2021_03_05_011055) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
+  #Created from my listings scaffold generation and then migrated db to roll it into the schema file.
+  #Some basic fields but also including boolean sold value and buyer_id.
+  #Sold used to measure when a product is available on the frontend.
+  #Buyer_id used to associate a purchase to a buyers account page. 
   create_table "listings", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -48,6 +54,10 @@ ActiveRecord::Schema.define(version: 2021_03_05_011055) do
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
 
+  #Users table created with devise generation. This step includes generating the views
+  #to be able to access the files in vs code to edit. 
+  #on the email input, it is requiring every email to be unique to ensure all users have
+  #a truely unique username. 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -60,6 +70,8 @@ ActiveRecord::Schema.define(version: 2021_03_05_011055) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  #One of the most crucial components the foreign keys. These allow each table to access
+  #the required table to link the tables and be able to use the data from within each. 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "listings", "users"
 end

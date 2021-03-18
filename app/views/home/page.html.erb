@@ -1,4 +1,6 @@
-<h2>Shop Shoes</h2>
+<br>
+<h3>Shop from the largest range of second hand shoes online today!</h3>
+<br>
 <div class="row row-cols-1 row-cols-md-3">
 <% c = 0 %>
   <% @listings.each do |listing| %>
@@ -9,7 +11,7 @@
           <div class="card-body">
             <h5 class="card-title"><%= listing.name %></h5>
             <p class="card-text"> $ <%= listing.price %></p>
-            <%= link_to "Buy Now!", listing_path(id: listing.id), method: :get, class: "btn btn-lg btn-block btn-outline-primary"%>
+            <%= link_to "Buy Now!", listing_path(id: listing.id), method: :get, class: "slider-btn"%>
             <% if c >= 6 %>
             <% break %>
             <% end %>

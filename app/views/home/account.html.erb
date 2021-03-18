@@ -1,13 +1,27 @@
-<h3>
-    My Account Page
-</h3>
+<br>
+<h3>My Account Page</h3>
 
-<h4>My Purchases</h4>
+<h3>My Purchases</h3>
 
+<div class="row row-cols-1 row-cols-md-3">
 <% if user_signed_in? %>
-    <% @my_purchases.each do |purchase| %>
-    <%= purchase.name %>
-    <%= purchase.id %>
-    <%= purchase.price %>
-    <% end %>
-<% end %>
+  <% @my_purchases.each do |purchase| %>
+      <div class="col-md-4">
+        <div class="card h-100">
+          <%= image_tag(purchase.images[0]) if purchase.images.attached? %>
+          <div class="card-body">
+            <h5 class="card-title"><%= purchase.name %></h5>
+            <p class="card-text"> $ <%= purchase.price %></p>
+            <p>Buyer ID: <%= purchase.id %></p>
+            <br>
+            <br>
+              <% if user_signed_in? && current_user.id == purchase.user_id %>
+              <%= link_to 'Edit Listing', edit_listing_path(purchase) %>
+              <%= link_to 'Destroy Listing', purchase, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
+  <% end %>
+</div>

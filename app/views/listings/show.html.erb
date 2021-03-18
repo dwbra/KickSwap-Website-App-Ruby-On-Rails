@@ -30,27 +30,16 @@
   <p>Listing already sold!</p>
 <% else %>
   <% if user_signed_in? %>
-  <button id="checkout-button">Checkout</button>
+  <button id="checkout-button" data-stripe="payment" data-session-id="<%= @session_id %>" data-public-key="<%= Rails.application.credentials.dig(:stripe, :public_key) %>" >Checkout</button>
   <% else %>
     <%= button_to "Buy Now!", new_user_registration_path, method: :get %>
   <% end %>
 <% end %>
 
-
-<script>
-  document.getElementById('checkout-button')
-    .addEventListener("click", () => {
-      const stripe = Stripe(
-        "<%= Rails.application.credentials.dig(:stripe, :public_key) %>"
-      )
-
-      stripe.redirectToCheckout({
-        sessionId: "<%= @session_id %>"
-      })
-    })
-</script>
-
-<% if current_user.id == @listing.user_id %>
+<% if user_signed_in? && current_user.id == @listing.user_id %>
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
 <% end %>
 <%= link_to 'Back', listings_path %>
+
+<%=javascript_include_tag "https://js.stripe.com/v3/" %>
+<%= javascript_pack_tag "stripe-button" %>

@@ -29,10 +29,11 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 #Custom Gems
-gem 'bootstrap', '~> 5.0.0.beta1'
+# gem 'bootstrap', '~> 5.0.0.beta1'
 gem 'jquery-rails'
 gem 'devise'
 gem 'stripe'
+gem "mini_magick"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
