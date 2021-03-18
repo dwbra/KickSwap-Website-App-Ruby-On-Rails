@@ -60,13 +60,6 @@ main {
      margin: 0 0 0 0 !important;
 }
 
-// .carousel-inner {
-//      // overflow: visible !important;
-//      // width: 100% !important;
-//      margin: 0 -10% 0 -10% !important;
-//      padding-left: -10% !important;
-// }
-
 
 p, h1, h2, h3, h4, h5, h6 {
      font-family: 'Poppins', sans-serif;
@@ -171,6 +164,15 @@ h3, h2 {
      .footer {
           display: flex;
           flex-wrap: wrap !important;
-          width: 100%;
      }
+     #myCarousel {
+          display: none;
+     }
+     #f2, #f3 {
+          display: none;
+     }
+}
+
+#f3 {
+     margin-right: 20px;
 }
