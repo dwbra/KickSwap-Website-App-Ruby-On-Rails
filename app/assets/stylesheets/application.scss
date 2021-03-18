@@ -166,3 +166,11 @@ h3, h2 {
      border: none;
 }
 
+
+@media screen and (max-width: 786px) {
+     .footer {
+          display: flex;
+          flex-wrap: wrap !important;
+          width: 100%;
+     }
+}
